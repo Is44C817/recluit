@@ -1,0 +1,63 @@
+.alert{
+    text-align: center;
+    font-weight: 700;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+body{
+    background: linear-gradient(270deg,#1963a3,#0b1149);
+}
+
+.button_employes{
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.card_employes{
+    width: 11rem;
+    padding: 1rem;
+}
+
+.container{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.container_grid,
+.container_grid_list {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-top: 30px;
+}
+
+hr{
+    border: 3px solid white;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.manager_should{
+    color: white;
+    font-weight: 700;
+}
+
+.space{
+    margin-top: 20px;
+}
+
+.subtitle{
+    text-align: center;
+    color: white;
+}
+
+.sub_employer{
+    text-align: center;
+}
+
+.title_employer{
+    text-align: center;
+}
+

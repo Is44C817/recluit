@@ -1,9 +1,15 @@
-import { Header } from "./components/Header";
 import { ProductList } from "./components/ProductList";
 import { CardEmployee } from "./components/CardEmployee";  
 import { useReducer } from "react";
-import { reducerEmployer, employesInitialState } from "./reducers/list_reducer";
+import { employesInitialState, reducerEmployer  } from "./reducers/list_reducer";
+import { 
+  Alert, 
+  Button, 
+  Col, 
+  Row 
+} from 'react-bootstrap';
 import TYPES from "./reducers/actionTypes";
+import './App.css'
 
 function App() {
 
@@ -37,39 +43,52 @@ function App() {
 
   return (
     <>
-      <Header />
       <h2 className="subtitle">
-        Gastos Mensuales
+        Determine the monthly expense allocation warranted a manager  
       </h2>
 
-      <div className="caontainer_grid_employes">
+      <div className="container_grid">
         {
           state.employes.map( (employer)=> {
             return <ProductList key={ employer.id } data={ employer } addToList={ addToList } />
           })
         }
       </div>
-
-      <div>
-        <button className="btn btn-total" onClick={ () => calculateTotal() }>
-          Total Gastos
-        </button>
-        <button className="btn btn-clear" onClick={ () => clearList() }>
-          Borrar Gastos
-        </button>
-      </div>
-
-      {
-        state.containerEmploye.length === 0 && <p>There are no employes in the cart</p>
-      }
-
-      <div className="container_grid">
+      <hr />
+      <div className="container_grid_list">
         {
           state.containerEmploye.map( (employerList) => {
-            return <CardEmployee key={employerList.id + Math.random() * 50} data={ employerList} deleteFromList={ deleteFromList }/>
+            return <CardEmployee  data={ employerList} deleteFromList={ deleteFromList } key={employerList.id + Math.random() * 50}/>
           })
         }
       </div>
+
+      <hr />
+      <Row>
+        <Col>
+          <div className='container'>
+            <Button className="btn btn-total" onClick={ () => calculateTotal() } variant="info" size="sm">
+              Total
+            </Button>
+              {
+                state.totalPrice > 0 && <p className="manager_should"> Manager A’s allocation should be: $ { state.totalPrice } </p>
+              }
+          </div>
+        </Col>
+        <Col>
+            <Button className="btn btn-clear" onClick={ () => clearList() } variant="info" size="sm">
+              Clear
+            </Button>
+        </Col>
+      </Row>
+
+  <div className="space"></div>
+        {
+          state.containerEmploye.length === 0 && 
+          <Alert variant="danger">
+            <p className="alert">There are no employes in the list</p>
+          </Alert>
+        }
     </>
   );
 }
