@@ -59,6 +59,10 @@ function App() {
         </button>
       </div>
 
+      {
+        state.containerEmploye.length === 0 && <p>There are no employes in the cart</p>
+      }
+
       <div className="container_grid">
 
       </div>
