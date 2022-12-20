@@ -17,3 +17,6 @@ Before using this project you should have installed the following:
 
  4. run the code in git CMD or git Bash with 
     [`npm start`](#code).
+    
+ Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
