@@ -42,11 +42,19 @@ function App() {
         Gastos Mensuales
       </h2>
 
+      <div className="caontainer_grid_employes">
+        {
+          state.employes.map( (employer)=> {
+            return <ProductList key={ employer.id } data={ employer } addToList={ addToList } />
+          })
+        }
+      </div>
+
       <div>
-        <button className="btn btn-total">
+        <button className="btn btn-total" onClick={ () => calculateTotal() }>
           Total Gastos
         </button>
-        <button className="btn btn-clear">
+        <button className="btn btn-clear" onClick={ () => clearList() }>
           Borrar Gastos
         </button>
       </div>
