@@ -58,7 +58,7 @@ function App() {
       <div className="container_grid_list">
         {
           state.containerEmploye.map( (employerList) => {
-            return <CardEmployee  data={ employerList} deleteFromList={ deleteFromList } key={employerList.id + Math.random() * 50}/>
+            return <CardEmployee  data={ employerList} deleteFromList={ deleteFromList } key={employerList.id + (Math.random() * 50)}/>
           })
         }
       </div>

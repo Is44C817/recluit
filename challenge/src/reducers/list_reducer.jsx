@@ -56,6 +56,4 @@ export const reducerEmployer = (state, action) => {
         default:
          return state;
     }
-
-    throw Error("Unknown action: " + action.type)
 }
